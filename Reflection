@@ -1,0 +1,7 @@
+1. Effect of PID
+P part equals to Kp*error, which is related to the current error. Increase Kp may results in overshoot and oscillation(cause unstable situation).
+D part equals to Kd*(error-last_error), which is related to the rate of change of error. Increase Kd may help to stablize the system(reduce oscillation)
+I part euqals to Ki*(sum of past errors)-which is related to the integration of past error. It is useful when there is a steady state error(offset). However, it may increases settling time.
+
+2. Tuning of PID
+In this project, PID is manually tuned based on trial and error. I increases Kp first until it starts oscillate, then increase Kd. Ki is not used.The overall performance is not perfect but the vehicle stays on the track. in the future, SGD may be used to find better PID parameters. As steering angle has value of [-1,1], the output result from PID controller is limited to -1-1.
